@@ -1,0 +1,2 @@
+New-SPServiceApplicationProxyGroup -Name DemoGroup
+Get-SPServiceApplicationProxy | Where {$_.DisplayName -like "Demo*"} | Select Id | ForEach { Add-SPServiceApplicationProxyGroupMember -Identity "DemoGroup" -Member $_.Id }
